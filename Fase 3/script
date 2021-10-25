@@ -1,1 +1,17 @@
 script
+New-ADGroup
+[-Name] <string>
+[-GroupScope] <System.Nullable[Microsoft.ActiveDirectory.Management.ADGroupScope]>
+[-AuthType {<Negotiate> | <Basic>}]
+[-Credential <PSCredential>]
+[-Description <string>] [-DisplayName <string>]
+[-GroupCategory <System.Nullable[Microsoft.ActiveDirectory.Management.ADGroupCategory]>]
+[-HomePage <string>]
+[-Instance <ADGroup>]
+[-ManagedBy <ADPrincipal>]
+[-OtherAttributes <hashtable>]
+[-PassThru <switch>]
+[-Path <string>]
+[-SamAccountName <string>]
+[-Server <string>]
+[-Confirm] [-WhatIf] [<CommonParameters>]
