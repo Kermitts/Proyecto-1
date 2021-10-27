@@ -1,0 +1,11 @@
+#Esto va en un archvio .txt
+GiveName,Surname,samAccountName,DisplayName,Departament
+Maria,Garcia,Maria.Gacia,Maria,Direccion
+
+
+#Esto va junto
+$usuarios=Import-Csv -Path C:\Users\Administrador\Desktop\usuarios.csv
+foreach ($item in $usuarios)
+ $clave=ConvertTo-secureString $i.contra -AsPlainText -Force
+    New-LocalUser $i.nombre -Password $clave -AccountNeverExpires -PasswordNeverExpires
+    Add-LocalGroupMember -Group usuarios -Member $i.nombre
