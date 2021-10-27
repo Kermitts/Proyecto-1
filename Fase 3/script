@@ -1,4 +1,4 @@
-script
+script para añadir nuevos grupos:
 New-ADGroup
 [-Name] <string>
 [-GroupScope] <System.Nullable[Microsoft.ActiveDirectory.Management.ADGroupScope]>
