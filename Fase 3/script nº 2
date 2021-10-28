@@ -11,3 +11,18 @@ foreach ($item in $usuarios)
     New-LocalUser $i.nombre -Password $clave -AccountNeverExpires -PasswordNeverExpires
     Add-LocalGroupMember -Group usuarios -Member $i.nombre
 }
+
+
+
+#Añadir un usuario con la contraseña,etc..., dentro de una UO por comandos en powershell
+New-ADUser -Name "Sebastian" -Path "OU=Administracion Parcial 1, DC=edu-gva, DC=es" -SamAccountName "Sebasmertic" -UserPrincipalName "Sebasmertic@edu-gva.es" -AccountPassword (ConvertTo-secureString "Chubbyemu01" -AsPlainText -Force) -GivenName "Sebastian" -Surname "Mertic" -ChangePAsswordAtLogon $true -Enabled $true
+
+#Borrar usuario de una UO por comandos desde powershell
+Remove-ADUser -Identity "CN=Sebastian, OU=Administracion Parcial 1, DC=edu-gva, DC=es"
+
+#Crear UO´s por comandos desde powershell
+New-ADOrganizationalUnit -Name "Administracion Parcial 1"
+
+#Deshabilitar cuenta de usuario desde powershell
+Disable-ADAccount -Identity "CN=Sebastian, OU=Administracion Parcial 1, DC=edu-gva, DC=es"
+Explicaion: Donde CN=sebastian, es el nombre de usuario que queremos deshabilitar. 
